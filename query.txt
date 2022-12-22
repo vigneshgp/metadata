@@ -1,0 +1,32 @@
+CREATE TABLE `optimum_practice_schema`.`modules` (
+  `module_id` INT NOT NULL,
+  `module_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`module_id`));
+  
+  INSERT INTO optimum_practice_schema.modules(module_id,module_name) VALUES(1,'On-boarding');
+  INSERT INTO optimum_practice_schema.modules(module_id,module_name) VALUES(2,'Attendance');
+  
+  //------------------------------------------------------------------------------------------------------//
+
+CREATE TABLE `optimum_practice_schema`.`module_column_values` (
+    `module_column_value_id` INT NOT NULL,
+    'module_column_id'  INT NOT NULL,
+    `module_colum_key` VARCHAR(45) NOT NULL,
+    'module_column_key_value' VARCHAR(50) NULL,
+    PRIMARY KEY (`module_column_value_id`));
+
+  INSERT INTO optimum_practice_schema.module_column_values(module_column_value_id,module_column_id,module_colum_key,module_column_key_value)
+     VALUES(1,101,exampleKey1,exampleKeyValue1);
+  INSERT INTO optimum_practice_schema.module_column_values(module_column_value_id,module_column_id,module_colum_key,module_column_key_value)
+     VALUES(1,101,exampleKey2,exampleKeyValue2);
+     
+     
+CREATE TABLE `optimum_practice_schema`.`module_columns` (
+    `module_id` INT NOT NULL,
+    `module_column_id`  INT NOT NULL,
+    `module_column_name` VARCHAR(50) NOT NULL,
+    `module_column_type` VARCHAR(45) NOT NULL,
+    `module_column_data_type` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`module_column_id`));
+    
+INSERT INTO optimum_practice_schema.module_columns(module_id, module_column_id, module_column_name, module_column_type, module_column_data_type) values(1,1,'name','textBox','String');

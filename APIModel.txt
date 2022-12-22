@@ -1,0 +1,60 @@
+// http://localhost:9191/modules
+
+[
+  {
+    "module_id": 1,
+    "module_name": "On-boarding"
+  },
+  {
+    "module_id": 2,
+    "module_name": "Attendance"
+  }
+]
+
+// http://localhost:9191/moduleById/1
+
+{
+  "module_id": 1,
+  "module_name": "On-boarding"
+}
+
+Create:
+http://localhost:9191/addModule
+{
+  "module_id": 3,
+  "module_name": "BGV"
+}
+
+Update:
+http://localhost:9191/updateModule/2
+{
+"module_name": "Attendance-Check"
+}
+
+delete:
+http://localhost:9191/delete/2
+
+//--------------------------------------------------------//
+Module_Column_Values API Names and Req:
+
+GET All Module column Values API -->  http://localhost:9191/modulesColumnValues
+
+GET Module column Values By Passing ID API -->  http://localhost:9191/moduleColumnValuesById/1
+
+ADD New Module column values API -->  http://localhost:9191/addModuleColumnValues
+REQ:
+{
+  "module_column_id": 3,
+  "module_colum_key": "Example",
+  "module_column_key_value": "Example"
+}
+
+UPDATE Module column values API -->  http://localhost:9191/updateModuleColumnValues/2
+REQ:
+{
+  "module_column_id": 3,
+  "module_colum_key": "ExampleChange",
+  "module_column_key_value": "ExampleChange"
+}
+
+DELETE Module column values API -->  http://localhost:9191/deleteColumnValues/2
