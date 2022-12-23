@@ -25,39 +25,39 @@ public class ModuleColumnsController {
 	
 	@PostMapping("/addModuleColumns")
     @ResponseStatus(HttpStatus.CREATED)
-    public ModuleColumns addModule(@RequestBody ModuleColumns module) {
-        return service.saveModule(module);
+    public ModuleColumns addModuleColumn(@RequestBody ModuleColumns module) {
+        return service.saveModuleColumn(module);
     }
 
     @GetMapping("/moduleColumns")
-    public List<ModuleColumns> findAllModules(){
-        return service.getModules();
+    public List<ModuleColumns> findAllModuleColumns(){
+        return service.getModuleColumns();
     }
 
     @GetMapping("/moduleColumnById/{id}")
     public ResponseEntity<ModuleColumns> findModuleById(@PathVariable int id){
-        return service.findModuleById(id)
+        return service.findModuleColumnById(id)
                 .map(ResponseEntity :: ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/updateModuleColumn/{id}")
     public ResponseEntity<ModuleColumns> updateModule(@PathVariable("id") int id,
                                                 @RequestBody ModuleColumns module) {
-        return service.findModuleById(id).map(
+        return service.findModuleColumnById(id).map(
                 savedModule->{
                     savedModule.setModule_column_id(id);
                     savedModule.setModule_column_id(module.getModule_column_id());
                     savedModule.setModule_column_name(module.getModule_column_name());
                     savedModule.setModule_column_data_type(module.getModule_column_data_type());
                     savedModule.setModule_column_type(module.getModule_column_type());;
-                    ModuleColumns updateModule = service.updateModule(savedModule);
+                    ModuleColumns updateModule = service.updateModuleColumn(savedModule);
                     return new ResponseEntity<>(updateModule, HttpStatus.OK);
                 }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/deleteModuleColumn/{id}")
-    public ResponseEntity<String> deleteProduct(@PathVariable int id) {
-        service.deleteModule(id);
+    public ResponseEntity<String> deleteModuleColumn(@PathVariable int id) {
+        service.deleteModuleColumn(id);
         return new ResponseEntity<String>("Module Columns deleted successfully!.", HttpStatus.OK);
     }
 	
