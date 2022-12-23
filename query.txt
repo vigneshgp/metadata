@@ -20,6 +20,7 @@ CREATE TABLE `optimum_practice_schema`.`module_column_values` (
   INSERT INTO optimum_practice_schema.module_column_values(module_column_value_id,module_column_id,module_colum_key,module_column_key_value)
      VALUES(1,101,exampleKey2,exampleKeyValue2);
      
+  //------------------------------------------------------------------------------------------------------//
      
 CREATE TABLE `optimum_practice_schema`.`module_columns` (
     `module_id` INT NOT NULL,
@@ -29,4 +30,8 @@ CREATE TABLE `optimum_practice_schema`.`module_columns` (
     `module_column_data_type` VARCHAR(50) NOT NULL,
     PRIMARY KEY (`module_column_id`));
     
-INSERT INTO optimum_practice_schema.module_columns(module_id, module_column_id, module_column_name, module_column_type, module_column_data_type) values(1,1,'name','textBox','String');
+  INSERT INTO optimum_practice_schema.module_columns(module_id, module_column_id, module_column_name, module_column_type, module_column_data_type)
+	VALUES(1,1,'name','textBox','String');
+  INSERT INTO optimum_practice_schema.module_columns(module_id, module_column_id, module_column_name, module_column_type, module_column_data_type)
+	VALUES(1,2,'role','selectBox','String');
+  
