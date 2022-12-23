@@ -13,23 +13,23 @@ public class ModuleColumnsService {
 	@Autowired
 	private ModuleColumnsRepository repository;
 	
-	public ModuleColumns saveModule(ModuleColumns moduleColumns) {
+	public ModuleColumns saveModuleColumn(ModuleColumns moduleColumns) {
 		return repository.save(moduleColumns);
 	}
 	
-	public List<ModuleColumns> getModules() {
+	public List<ModuleColumns> getModuleColumns() {
 		return repository.findAll();
 	}
 	
-	public Optional<ModuleColumns> findModuleById(int moduleColumnId) {
+	public Optional<ModuleColumns> findModuleColumnById(int moduleColumnId) {
 		return repository.findById(moduleColumnId);
 	}
 	
-	public ModuleColumns updateModule(ModuleColumns moduleColumn) {
+	public ModuleColumns updateModuleColumn(ModuleColumns moduleColumn) {
 		return repository.save(moduleColumn);
 	}
 	
-	public void deleteModule(int moduleId) {
+	public void deleteModuleColumn(int moduleId) {
 		repository.deleteById(moduleId);
 	}
 	
